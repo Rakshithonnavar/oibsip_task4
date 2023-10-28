@@ -9,22 +9,23 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(night.jpg) no-repeat;
+    background: url(task4.jpg) no-repeat;
     background-size: cover;
     background-position: center;
    
 }
 .wrapper{
-    width: 390px;
+    width: 375px;
+    height: 550px;
     background: transparent;
     border:2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 20px;
-    padding: 30px 40px;
+    padding: 10px 40px;
     border-color: whitesmoke;
-    background-color: black;
+    background-color: black; 
 }
 
 .wrapper h1{
@@ -48,12 +49,15 @@ body{
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
+    border-color: aliceblue;
+    border-width: 1px;
     padding: 20px 40px 20px 20px;
 }
 
 .input-box input::placeholder{
     color: #fff;
 }
+
 .wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
