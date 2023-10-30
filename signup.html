@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGNUP</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
         <div class="wrapper">
-          <form action="#">
+          <form>
             <h1>Sign Up</h1>
               <div class="input-box">
                 <span class="details">Name</span>
@@ -24,6 +25,7 @@
                 <span class="details">Username</span>
                 <input type="text" placeholder="Enter  a username" required>
                </div>
+
               <div class="input-box">
                 <span class="details">Password</span>
                 <input type="password" placeholder="Enter a password" required>
@@ -34,55 +36,14 @@
               </div>
 
                <div>
-                <button type="submit" class="btn"><strong>Register</strong></button>
+                <button type="submitSignup" class="btn"><strong>Register</strong></button>
                </div>
 
                <div class="register-link">
-                <p>Already have account? <a href="index.html"> Login</a></p>
-               </div>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-      <script src="script.js"></script>
-      <script>
-          function encryptData(data, key) {
-              const encrypted = CryptoJS.AES.encrypt(data, key);
-              return encrypted.toString();
-          }
-          const signup = document.getElementById("submitSignup").addEventListener("click", function (event) {
-              event.preventDefault();
-              saveData();
-          });
-
-          function saveData() {
-              const userName = document.getElementById('UserName').value;
-              const passWord = document.getElementById('password1').value;
-              const rePassword = document.getElementById('password2').value;
-
-              if (passWord === rePassword) {
-                  let user_records = JSON.parse(localStorage.getItem("users")) || [];
-
-
-                  const encryptedPassword = encryptData(passWord, 'your-secret-key');
-
-                  if (user_records.some((v) => {
-                      return (v.user === userName)
-                  })) {
-                      alert("Account Already exists!!");
-                  } else {
-                      user_records.push({
-                          "user": UserName,
-                          "password": encryptedPassword,
-                      });
-                      localStorage.setItem("users", JSON.stringify(user_records));
-                      window.location.href = "login.html";
-                  }
-              } else {
-                  alert("Password Mismatch!!!!");
-              }
-          }
-      </script>
-        </div>
+                <p>Already have account? <a href="index.html">Login</a></p>
+               </div>  
       </form>
+    </div>
 </body>
 </html>
 
