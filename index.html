@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -20,7 +21,7 @@
                 <label>
                     <input type="checkbox">Remember me
                 </label>
-                <a href="#">Forgot password ?</a>
+                <a href="#">Forgot password?</a>
             </div>
             <button type="submit" class="btn">Login</button>
           
@@ -29,6 +30,39 @@
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+    <script>
+       function decryptData(encryptedData, key) {
+    const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, key);
+    return decryptedBytes.toString(CryptoJS.enc.Utf8);
+}
+
+const login = document.getElementById("submitLogin").addEventListener("click", function (event) {
+    event.preventDefault();
+    validateData();
+});
+
+function validateData() {
+    const userName = document.getElementById('userName').value;
+    const passWord = document.getElementById('password').value;
+    let user_records = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = user_records.find((v) => v.user === userName);
+
+    if (user && decryptData(user.password, 'your-secret-key') === passWord) {
+        alert("Login successful!!!");
+        localStorage.setItem("name", user.user);
+        localStorage.setItem("password", user.password);
+        window.location.href = "tributepage.html";
+    } else {
+        alert("Login failed");
+    }
+}
+
+
+    </script> -->
+</form>
+</div>
 </body>
 </html>
