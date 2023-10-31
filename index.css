@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    background: yellow;
+   
+}
+
+.box {
+    width: 325px;
+    padding: 30px 40px;
+    margin: 10% auto;
+    background: black;
+    text-align: center;
+    border-radius: 40px;
+    border: 5px solid white;
+    height: 64vh;
+   color: aliceblue;
+    
+}
+
+.box > h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+::placeholder{
+    color: white;
+    font-size: 12px;
+}
+
+.box input[type="text"],
+.box input[type="password"],
+.box input[type="email"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid white;
+    padding: 8.5px;
+    width: 215px;
+    border-radius: 40px;
+    height: 7.5vh;
+    color: white;
+}
+
+/* .box input[type="text"]:focus,
+.box input[type="password"]:focus,
+.box input[type="email"]:focus {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid white;
+    padding: 8.5px;
+    width: 200px;
+    color: white;
+    border-radius: 40px;
+} */
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid aliceblue;
+    padding: 8.5px;
+    width: 190px;
+    border-radius: 25px;
+    background-color: aqua;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box > h3 {
+    font-weight: 400;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: medium;
+}
+
+.box > a {
+    color: white;
+    font-size: medium;
+    font-weight: 400;
+    font-style: normal;
+    font-family: cursive;
+}
+
+/* @media screen and (max-width: 600px) {
+    .box {
+        width: 100%;
+        margin: 20% 0% 20% 0%;
+    }
+
+    .box input[type="text"],
+    .box input[type="password"],
+    .box input[type="email"] {
+        width: 100%;
+        margin: 10px auto;
+        padding: 4px;
+        padding: 15px;
+    }
+
+    .box input[type="text"]:focus,
+    .box input[type="password"]:focus,
+    .box input[type="email"]:focus {
+        width: 100%;
+        border-color: darkorange;
+        padding: 4px;
+    }
+} */
