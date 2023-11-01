@@ -1,56 +1,58 @@
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login and Signup Authentication</title>
-
-        <link rel="stylesheet" href="index.css">
-        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-                        
-    </head>
-    <body>
-        <form class="box" action="index.html" method="post">
-            <h1>Sign in</h1>
-            <input type="text" name="Name" placeholder="Enter Username" id="userName" Required>
-            <input type="password" name="Password" placeholder="Enter Your Password" id="password">
-            <input type="submit" name="submit" value="Login" onclick="validateData()" id="submitLogin">
-            <h3> Don't have an account?</h3>
-            <a href="signup.html" target="_self">Sign up</a>
-    
-        </form>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-          
-          <script>
-           function decryptData(encryptedData, key) {
-        const decryptedBytes = CryptoJS.AES.decrypt(encryptedData, key);
-        return decryptedBytes.toString(CryptoJS.enc.Utf8);
-    }
-    
-    const login = document.getElementById("submitLogin").addEventListener("click", function (event) {
-        event.preventDefault();
-        validateData();
-    });
-    
-    function validateData() {
-        const userName = document.getElementById('userName').value;
-        const passWord = document.getElementById('password').value;
-        let user_records = JSON.parse(localStorage.getItem("users")) || [];
-    
-        const user = user_records.find((v) => v.user === userName);
-    
-        if (user && decryptData(user.password, 'your-secret-key') === passWord) {
-            alert("Login successful!!!");
-            localStorage.setItem("name", user.user);
-            localStorage.setItem("password", user.password);
-            window.location.href = "todoapp.html";
-        } else {
-            alert("Login failed");
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form class="box" action="signup.html" method="POST">
+        <h1>Sign up</h1>
+        <input type="text" name="Name" placeholder="Enter User  name" id="userName" Required>
+        <input type="password" name="password" placeholder="Enter Your Password" id="password1" Required>
+        <input type="password" name="password" placeholder="Re enter the Password" id="password2" Required>
+        <input type="submit" name="submit" value="Submit" id="submitSignup">
+        <h3> Already have an account?</h3>
+        <a href="login.html" target="_self">Login in</a>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script>
+        function encryptData(data, key) {
+            const encrypted = CryptoJS.AES.encrypt(data, key);
+            return encrypted.toString();
         }
-    }
+        const signup = document.getElementById("submitSignup").addEventListener("click", function (event) {
+            event.preventDefault();
+            saveData();
+        });
+        function saveData() {
+            const userName = document.getElementById('userName').value;
+            const passWord = document.getElementById('password1').value;
+            const rePassword = document.getElementById('password2').value;
 
-        </script>
-    </body>
+            if (passWord === rePassword) {
+                let user_records = JSON.parse(localStorage.getItem("users")) || [];
+
+                   if(user_records.some((v)=>{
+                            return (v.userName === userName);
+                   })){
+                    alert("Account Already exists!");
+                   }else{
+                const encryptedPassword = encryptData(passWord, 'your-secret-key');
+                     user_records.push({
+                        "userName":userName,
+                        "password":encryptedPassword,
+                     });
+
+                    localStorage.setItem("users", JSON.stringify(user_records));
+                    alert("Registration Successful!");
+                }
+            } else {
+                alert("Password Mismatch!!!!");
+            }
+        }
+    </script>
+</body>
 </html>
