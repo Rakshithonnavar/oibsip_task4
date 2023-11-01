@@ -6,21 +6,25 @@
 }
 
 body {
-    background: yellow;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:url(task4.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .box {
     width: 325px;
     padding: 30px 40px;
     margin: 10% auto;
-    background: black;
+    background-color: black;
     text-align: center;
     border-radius: 40px;
     border: 5px solid white;
-    height: 64vh;
-   color: aliceblue;
-    
+    height: 69.9vh;
+    color: aliceblue; 
+  
 }
 
 .box > h1 {
@@ -96,6 +100,9 @@ body {
     font-weight: 400;
     font-style: normal;
     font-family: cursive;
+}
+.box a:hover{
+    color: yellow;
 }
 
 /* @media screen and (max-width: 600px) {
