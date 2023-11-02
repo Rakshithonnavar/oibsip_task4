@@ -11,7 +11,7 @@
     <form class="box" action="signup.html" method="POST">
         <h1>Sign up</h1>
         <input type="text" name="Name" placeholder="Enter User  name" id="userName" Required>
-        <input type="password" name="password" placeholder="Enter Your Password" id="password1" Required>
+        <input type="password" name="password" placeholder="Enter a Password" id="password1" Required>
         <input type="password" name="password" placeholder="Re enter the Password" id="password2" Required>
         <input type="submit" name="submit" value="Submit" id="submitSignup">
         <h3> Already have an account?</h3>
@@ -48,9 +48,10 @@
 
                     localStorage.setItem("users", JSON.stringify(user_records));
                     alert("Registration Successful!");
+                    window.location.href = "https://www.linkedin.com/in/rakshit-honnavar-7b7ba51bb/";
                 }
             } else {
-                alert("Password Mismatch!!!!");
+                alert("Password Mismatch!!");
             }
         }
     </script>
