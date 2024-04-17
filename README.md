@@ -3,3 +3,6 @@
  After the user registers the  credentials are stored within local storage.
  Tech stacks used: HTML,CSS for user interface
  JavaScript (ES6) for logic and interactivity.
+
+
+ 
